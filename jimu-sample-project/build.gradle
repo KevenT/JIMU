@@ -5,11 +5,11 @@ buildscript {
     ext.versions = [
             'minSdk'        : 15,
             'targetSdk'     : 21,
-            'compileSdk'    : 27,
+            'compileSdk'    : 26,
             'kotlin'        : '1.2.30',
-            'supportLibrary': '27.0.2',
-            'androidPlugin' : '2.3.1',
-            'androidTools'  : '27.0.3',
+            'supportLibrary': '26.1.0',
+            'androidPlugin' : '3.0.1',
+            'androidTools'  : '26.0.2',
     ]
 
     ext.deps = [

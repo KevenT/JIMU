@@ -101,27 +101,32 @@ public class ReaderTestActivity extends AppCompatActivity {
             int i = 0;
             while (true) {
                 i++;
+                try {
+                    sleep(1000);
                 EventManager.getInstance().postEvent(new TestClz("forceTest:" + i));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
-    public void postEvent() {
-
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                eventManager.postEvent(new TestClz("post on mainThread"));
-            }
-        });
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                eventManager.postEvent(new TestClz("post on background"));
-            }
-        }).start();
-    }
+//    public void postEvent() {
+//
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                eventManager.postEvent(new TestClz("post on mainThread"));
+//            }
+//        });
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                eventManager.postEvent(new TestClz("post on background"));
+//            }
+//        }).start();
+//    }
 
     @Override
     public void finish() {
