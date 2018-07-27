@@ -13,6 +13,9 @@ public class ReaderApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
 
+        // 初始化 EventManager的 单例 instance 
+        EventManager.init(this);
+        
         //如果isRegisterCompoAuto为false，则需要通过反射加载组件
         Router.registerComponent("com.luojilab.share.applike.ShareApplike");
         Router.registerComponent("com.luojilab.share.kotlin.applike.KotlinApplike");
